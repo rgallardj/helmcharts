@@ -1,0 +1,13 @@
+# mi-chart/values.yaml
+
+cliente:
+  image:
+    repository: rgallardj/actividad1-gestioncliente
+    tag: latest
+  replicaCount: 1
+
+eurekaserver:
+  image:
+    repository: rgallardj/actividad1-eurekaserver
+    tag: latest
+  replicaCount: 1

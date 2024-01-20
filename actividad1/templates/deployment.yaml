@@ -1,0 +1,53 @@
+# mi-chart/templates/deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "actividad1.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "actividad1.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.cliente.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "actividad1.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "actividad1.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-cliente
+          image: "{{ .Values.cliente.image.repository }}:{{ .Values.cliente.image.tag }}"
+          # ... otras configuraciones del contenedor cliente ...
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "actividad1.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "actividad1.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.eurekaserver.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "actividad1.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "actividad1.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}-eurekaserver
+          image: "{{ .Values.eurekaserver.image.repository }}:{{ .Values.eurekaserver.image.tag }}"
+          # ... otras configuraciones del contenedor eurekaserver ...
