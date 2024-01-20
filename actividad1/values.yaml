@@ -1,7 +1,7 @@
 cliente:
   image:
     repository: rgallardj/actividad1-gestioncliente
-    tag: latest
+    tag: gestioncliente-latest
   replicaCount: 1
   service:
     port: 8092  # Puerto deseado para el servicio de cliente
@@ -10,7 +10,7 @@ cliente:
 eurekaserver:
   image:
     repository: rgallardj/actividad1-eurekaserver
-    tag: latest
+    tag: eurekaserver-latest
   replicaCount: 1
   service:
     port: 8761  # Puerto deseado para EurekaServer
