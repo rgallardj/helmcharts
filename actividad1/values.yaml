@@ -13,3 +13,7 @@ eurekaserver:
   replicaCount: 1
   service:
     port: 8761  # Puerto deseado para EurekaServer
+
+serviceAccount:
+  create: true  # O establece esto en false si no quieres crear un nuevo ServiceAccount
+  # Otras configuraciones del service account si las tienes
