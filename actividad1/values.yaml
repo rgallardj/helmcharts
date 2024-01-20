@@ -5,6 +5,7 @@ cliente:
   replicaCount: 1
   service:
     port: 8092  # Puerto deseado para el servicio de cliente
+    type: ClusterIP  # o el tipo de servicio que desees
 
 eurekaserver:
   image:
@@ -13,7 +14,8 @@ eurekaserver:
   replicaCount: 1
   service:
     port: 8761  # Puerto deseado para EurekaServer
+    type: ClusterIP  # o el tipo de servicio que desees
 
 serviceAccount:
-  create: true  # O establece esto en false si no quieres crear un nuevo ServiceAccount
+  create: false  # O establece esto en false si no quieres crear un nuevo ServiceAccount
   # Otras configuraciones del service account si las tienes
