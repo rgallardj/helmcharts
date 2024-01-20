@@ -1,6 +1,6 @@
 cliente:
   image:
-    repository: rgallardj/actividad1-gestioncliente
+    repository: rgallardj/actividad1
     tag: gestioncliente-latest
   replicaCount: 1
   service:
@@ -9,7 +9,7 @@ cliente:
 
 eurekaserver:
   image:
-    repository: rgallardj/actividad1-eurekaserver
+    repository: rgallardj/actividad1
     tag: eurekaserver-latest
   replicaCount: 1
   service:
