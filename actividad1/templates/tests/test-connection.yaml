@@ -8,8 +8,15 @@ metadata:
     "helm.sh/hook": test
 spec:
   containers:
-    - name: wget
+    - name: wget-cliente
       image: busybox
       command: ['wget']
-      args: ['{{ include "actividad1.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "actividad1.fullname" . }}-cliente:{{ .Values.cliente.replicaCount }}']
+      # Cambia .Values.cliente.replicaCount según lo que quieras probar para cliente
+
+    - name: wget-eurekaserver
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "actividad1.fullname" . }}-eurekaserver:{{ .Values.eurekaserver.replicaCount }}']
+      # Cambia .Values.eurekaserver.replicaCount según lo que quieras probar para eurekaserver
   restartPolicy: Never

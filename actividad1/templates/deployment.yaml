@@ -23,6 +23,8 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-cliente
           image: "{{ .Values.cliente.image.repository }}:{{ .Values.cliente.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.cliente.service.port }}  # Puerto del servicio de cliente
           # ... otras configuraciones del contenedor cliente ...
 
 ---
@@ -50,4 +52,6 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-eurekaserver
           image: "{{ .Values.eurekaserver.image.repository }}:{{ .Values.eurekaserver.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.eurekaserver.service.port }}  # Puerto de EurekaServer
           # ... otras configuraciones del contenedor eurekaserver ...

@@ -1,13 +1,15 @@
-# mi-chart/values.yaml
-
 cliente:
   image:
     repository: rgallardj/actividad1-gestioncliente
     tag: latest
   replicaCount: 1
+  service:
+    port: 8092  # Puerto deseado para el servicio de cliente
 
 eurekaserver:
   image:
     repository: rgallardj/actividad1-eurekaserver
     tag: latest
   replicaCount: 1
+  service:
+    port: 8761  # Puerto deseado para EurekaServer
