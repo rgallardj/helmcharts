@@ -1,0 +1,27 @@
+# services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: cliente-service
+spec:
+  selector:
+    app: cliente-app
+  ports:
+    - protocol: TCP
+      port: 8092
+      targetPort: 8092
+  type: ClusterIP  # Tipo de servicio ClusterIP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eurekaserver-service
+spec:
+  selector:
+    app: eurekaserver-app
+  ports:
+    - protocol: TCP
+      port: 8761
+      targetPort: 8761
+  type: ClusterIP  # Tipo de servicio ClusterIP
