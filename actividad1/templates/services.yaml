@@ -10,7 +10,7 @@ spec:
     - protocol: TCP
       port: 8092
       targetPort: 8092
-  type: ClusterIP  # Tipo de servicio ClusterIP
+  type: NodePort  # Cambiado a tipo NodePort
 
 ---
 apiVersion: v1
@@ -24,4 +24,4 @@ spec:
     - protocol: TCP
       port: 8761
       targetPort: 8761
-  type: ClusterIP  # Tipo de servicio ClusterIP
+  type: NodePort  # Cambiado a tipo NodePort
