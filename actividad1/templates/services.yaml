@@ -10,7 +10,8 @@ spec:
     - protocol: TCP
       port: 8092
       targetPort: 8092
-  type: ClusterIP  # Cambiado a tipo NodePort
+      nodePort: 30060
+  type: NodePort  # Cambiado a tipo NodePort
 
 ---
 apiVersion: v1
