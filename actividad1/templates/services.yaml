@@ -1,0 +1,28 @@
+# services.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: cliente-service
+spec:
+  selector:
+    app: cliente-app
+  ports:
+    - protocol: TCP
+      port: 8092
+      targetPort: 8092
+      nodePort: 30060
+  type: NodePort  # Cambiado a tipo NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eurekaserver-service
+spec:
+  selector:
+    app: eurekaserver-app
+  ports:
+    - protocol: TCP
+      port: 8761
+      nodePort: 30030
+  type: NodePort  # Cambiado a tipo NodePort
