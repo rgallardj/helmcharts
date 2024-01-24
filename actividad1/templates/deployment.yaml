@@ -1,7 +1,5 @@
-# mi-chart/templates/deployment.yaml
-
 apiVersion: apps/v1
-kind:  Pod
+kind: Deployment
 metadata:
   name: client-deployment
   labels:
@@ -10,15 +8,17 @@ spec:
   replicas: {{ .Values.cliente.replicaCount }}
   selector:
     matchLabels:
-        app: client-app
+      app: client-app
   template:
     metadata:
       labels:
-          app: client-app
+        app: client-app
     spec:
       containers:
         - name: {{ .Chart.Name }}-cliente
           image: "{{ .Values.cliente.image.repository }}:{{ .Values.cliente.image.tag }}"
           ports:
-                containerPort: 8092    
+            - name: http
+              containerPort: 8092
+              protocol: TCP
           # ... otras configuraciones del contenedor cliente ...

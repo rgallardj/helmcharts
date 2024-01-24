@@ -3,12 +3,12 @@ entries:
   actividad1:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-01-24T13:57:33.0993164+01:00"
+    created: "2024-01-24T14:05:32.5764845+01:00"
     description: This is an example of springboot application
-    digest: d3cc0b349d7b6dc5781a2aa95691015a49073adea28ed06ee2b8210429c09481
+    digest: 064f555dbf95e91e4e353e40278f6c160604d873590b9191c172d73aa69d8290
     name: actividad1
     type: application
     urls:
     - actividad1-0.1.0.tgz
     version: 0.1.0
-generated: "2024-01-24T13:57:33.0993164+01:00"
+generated: "2024-01-24T14:05:32.5759417+01:00"
