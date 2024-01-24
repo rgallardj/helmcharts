@@ -19,4 +19,6 @@ spec:
       containers:
         - name: {{ .Chart.Name }}-cliente
           image: "{{ .Values.cliente.image.repository }}:{{ .Values.cliente.image.tag }}"
+          ports:
+                containerPort: 8092    
           # ... otras configuraciones del contenedor cliente ...
